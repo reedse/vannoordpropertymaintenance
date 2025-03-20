@@ -25,18 +25,26 @@ export const metadata: Metadata = {
     siteName: "Vannoord Property Maintenance",
     images: [
       {
-        url: "/og-image.jpg",
+        url: "https://vannoordpropertymaintenance.com/og-image.jpg",
         width: 1200,
         height: 630,
+        type: "image/jpg",
         alt: "Vannoord Property Maintenance",
       },
     ],
+  },
+  other: {
+    'og:image': 'https://vannoordpropertymaintenance.com/og-image.jpg',
+    'og:image:width': '1200',
+    'og:image:height': '630',
+    'og:image:type': 'image/jpg',
+    'og:image:alt': 'Vannoord Property Maintenance',
   },
   twitter: {
     card: "summary_large_image",
     title: "Vannoord Property Maintenance - Aylmer, Ontario",
     description: "Professional property maintenance services including lawn care, tree pruning, pressure washing and more in Aylmer, Ontario and surrounding areas.",
-    images: ["/og-image.jpg"],
+    images: ["https://vannoordpropertymaintenance.com/og-image.jpg"],
   },
   robots: {
     index: true,
