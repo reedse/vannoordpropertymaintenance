@@ -9,7 +9,7 @@ const inter = Inter({ subsets: ["latin"] })
 export const metadata: Metadata = {
   title: "Vannoord Property Maintenance - Aylmer, Ontario",
   description: "Professional property maintenance services including lawn care, tree pruning, pressure washing and more in Aylmer, Ontario and surrounding areas.",
-  keywords: "property maintenance, lawn care, landscaping, Aylmer, Ontario, tree pruning, pressure washing, junk removal, window cleaning, gutter cleaning",
+  keywords: "property maintenance, lawn care, landscaping, Aylmer, Ontario, tree pruning, pressure washing, junk removal, gutter cleaning",
   authors: [{ name: "Vannoord Property Maintenance" }],
   creator: "Vannoord Property Maintenance",
   metadataBase: new URL("https://vannoordpropertymaintenance.com"),
@@ -111,6 +111,11 @@ export default function RootLayout({
                   "@type": "Service",
                   "name": "Tree Pruning",
                   "description": "Professional tree pruning to maintain tree health, improve appearance, and prevent potential hazards."
+                },
+                {
+                  "@type": "Service",
+                  "name": "Gutter Cleaning",
+                  "description": "Thorough cleaning of gutters to prevent water damage and maintain your home's exterior integrity."
                 },
                 {
                   "@type": "Service",

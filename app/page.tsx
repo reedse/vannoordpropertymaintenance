@@ -147,7 +147,9 @@ export default function Home() {
             {/* CTA Button & Mobile Menu Toggle */}
             <div className="flex items-center gap-3">
               <Button className="bg-primary hover:bg-primary/90 text-primary-foreground">
-                Get a Quote
+                <Link href="#contact">
+                  Get a Quote
+                </Link>
               </Button>
               <Button 
                 variant="ghost" 
@@ -301,10 +303,14 @@ export default function Home() {
                   transition={{ delay: 0.8, duration: 0.8 }}
                 >
                   <Button size="lg" className="bg-primary hover:bg-primary/90 text-primary-foreground font-medium">
-                    Free Consultation
+                    <Link href="#contact">
+                      Free Consultation
+                    </Link>
                   </Button>
                   <Button size="lg" variant="outline" className="bg-white/10 text-white backdrop-blur hover:bg-white/20">
-                    Our Services
+                    <Link href="#services">
+                      Our Services
+                    </Link>
                   </Button>
                 </motion.div>
               </div>
@@ -337,7 +343,7 @@ export default function Home() {
                       name={service.title}
                       description={service.description}
                       Icon={service.icon}
-                      href="#"
+                      href="#services"
                       cta="Learn more"
                       className={cn(
                         service.className
@@ -416,8 +422,17 @@ export default function Home() {
                           )}
 
                           <div className="pt-4 mt-6 border-t">
-                            <Button className="bg-primary hover:bg-primary/90 text-primary-foreground">
-                              Request This Service
+                            <Button 
+                              className="bg-primary hover:bg-primary/90 text-primary-foreground"
+                              onClick={() => {
+                                // Find and click the dialog close button
+                                const closeButton = document.querySelector(".absolute.right-4.top-4") as HTMLElement;
+                                if (closeButton) closeButton.click();
+                              }}
+                            >
+                              <Link href="#contact">
+                                Request This Service
+                              </Link>
                             </Button>
                           </div>
                         </MorphingDialogDescription>
@@ -548,7 +563,9 @@ export default function Home() {
                   ))}
                 </ul>
                 <Button className="mt-8 bg-primary hover:bg-primary/90 text-primary-foreground">
-                  Learn More About Us
+                  <Link href="#contact">
+                    Learn More About Us
+                  </Link>
                 </Button>
               </div>
               <div className="relative overflow-hidden rounded-lg h-[600px] w-full">
@@ -582,7 +599,9 @@ export default function Home() {
                 </p>
               </div>
               <Button size="lg" variant="secondary" className="min-w-[200px]">
-                Get Started Today
+                <Link href="#contact">
+                  Get Started Today
+                </Link>
               </Button>
             </div>
           </div>
@@ -745,7 +764,7 @@ export default function Home() {
                 </li>
                 <li>
                   <Link href="#" className="text-muted-foreground hover:text-foreground">
-                    Window & Gutter Cleaning
+                    Gutter Cleaning
                   </Link>
                 </li>
                 <li>
@@ -861,45 +880,6 @@ const services = [
     ],
   },
   {
-    title: "Junk Removal",
-    description: "Efficient removal of yard waste, old furniture, and other unwanted items from your property.",
-    image: "/services/removal.jpg",
-    icon: Trash2,
-    className: "lg:col-span-1 lg:row-span-1",
-    fullDescription: [
-      "Our junk removal service helps you reclaim your space by efficiently removing unwanted items from your property. Whether it's yard waste, old furniture, appliances, or general debris, we handle the heavy lifting and disposal.",
-      "We prioritize responsible disposal methods, including recycling and donation when possible, to minimize environmental impact. Our team works quickly and leaves your property clean and clear.",
-    ],
-    features: [
-      "Removal of yard waste, furniture, and appliances",
-      "Responsible disposal and recycling",
-      "Same-day service often available",
-      "No hidden fees - upfront pricing",
-      "Heavy lifting and labor included",
-      "Property left clean after removal",
-    ],
-  },
-  {
-    title: "Window & Gutter Cleaning",
-    description:
-      "Thorough cleaning of windows and gutters to maintain your home's appearance and prevent water damage.",
-    image: "/services/gutter.jpg",
-    icon: Wind,
-    className: "lg:col-span-1 lg:row-span-2",
-    fullDescription: [
-      "Our window and gutter cleaning service keeps your home looking great while preventing potential water damage. Clean windows enhance your home's appearance and allow more natural light inside, while clear gutters ensure proper water drainage away from your foundation.",
-      "Our professional team uses specialized equipment to safely clean windows up to three stories high and remove all debris from gutters and downspouts.",
-    ],
-    features: [
-      "Interior and exterior window cleaning",
-      "Screen cleaning and frame wiping",
-      "Complete gutter debris removal",
-      "Downspout flushing",
-      "Minor gutter repairs when needed",
-      "Inspection for potential issues",
-    ],
-  },
-  {
     title: "Pressure Washing",
     description:
       "High-quality pressure washing services for driveways, decks, siding, and other surfaces to remove dirt, grime, and mildew.",
@@ -917,6 +897,45 @@ const services = [
       "Fence cleaning and brightening",
       "Roof moss and algae removal",
       "Environmentally friendly cleaning solutions",
+    ],
+  },
+  {
+    title: "Gutter Cleaning",
+    description:
+      "Thorough cleaning of gutters to prevent water damage and maintain your home's exterior integrity.",
+    image: "/services/gutter.jpg",
+    icon: Wind,
+    className: "lg:col-span-1 lg:row-span-2",
+    fullDescription: [
+      "Our gutter cleaning service helps prevent potential water damage to your home. Clear gutters ensure proper water drainage away from your foundation, protecting your property from water-related issues.",
+      "Our professional team uses specialized equipment to safely remove all debris from gutters and downspouts, ensuring proper water flow and preventing clogging.",
+    ],
+    features: [
+      "Complete gutter debris removal",
+      "Downspout flushing",
+      "Minor gutter repairs when needed",
+      "Inspection for potential issues",
+      "Proper disposal of all gutter debris",
+      "Protection of landscaping during service"
+    ],
+  },
+  {
+    title: "Junk Removal",
+    description: "Efficient removal of yard waste, old furniture, and other unwanted items from your property.",
+    image: "/services/removal.jpg",
+    icon: Trash2,
+    className: "lg:col-span-1 lg:row-span-1",
+    fullDescription: [
+      "Our junk removal service helps you reclaim your space by efficiently removing unwanted items from your property. Whether it's yard waste, old furniture, appliances, or general debris, we handle the heavy lifting and disposal.",
+      "We prioritize responsible disposal methods, including recycling and donation when possible, to minimize environmental impact. Our team works quickly and leaves your property clean and clear.",
+    ],
+    features: [
+      "Removal of yard waste, furniture, and appliances",
+      "Responsible disposal and recycling",
+      "Same-day service often available",
+      "No hidden fees - upfront pricing",
+      "Heavy lifting and labor included",
+      "Property left clean after removal",
     ],
   },
 ]

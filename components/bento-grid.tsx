@@ -60,14 +60,11 @@ const BentoCard = ({
     >
       <Button
         variant="default"
-        asChild
         size="sm"
         className="pointer-events-auto bg-primary hover:bg-primary/90 text-white"
       >
-        <a href={href}>
-          {cta}
-          <ArrowRightIcon className="ml-2 h-4 w-4" />
-        </a>
+        {cta}
+        <ArrowRightIcon className="ml-2 h-4 w-4" />
       </Button>
     </div>
     <div className="pointer-events-none absolute inset-0 transform-gpu transition-all duration-300 group-hover:bg-black/[.03] group-hover:dark:bg-neutral-800/10" />
