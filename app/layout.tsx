@@ -112,11 +112,6 @@ export default function RootLayout({
                 },
                 {
                   "@type": "Service",
-                  "name": "Trimming & Edging",
-                  "description": "Precise trimming and edging to create clean, defined borders between your lawn, walkways, and garden beds."
-                },
-                {
-                  "@type": "Service",
                   "name": "Tree Pruning",
                   "description": "Professional tree pruning to maintain tree health, improve appearance, and prevent potential hazards."
                 },
@@ -124,6 +119,11 @@ export default function RootLayout({
                   "@type": "Service",
                   "name": "Gutter Cleaning",
                   "description": "Thorough cleaning of gutters to prevent water damage and maintain your home's exterior integrity."
+                },
+                {
+                  "@type": "Service",
+                  "name": "Garden Maintenance",
+                  "description": "Comprehensive garden maintenance services to keep your outdoor spaces looking beautiful and well-maintained."
                 },
                 {
                   "@type": "Service",

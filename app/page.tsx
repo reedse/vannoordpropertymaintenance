@@ -290,9 +290,9 @@ export default function Home() {
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: 0.6, duration: 0.8 }}
                 >
-                  {services.map((service, index) => (
+                  {heroServices.map((service, index) => (
                     <span key={index} className="bg-white/20 backdrop-blur-sm text-white px-3 py-1 rounded-full text-sm">
-                      {service.title}
+                      {service}
                     </span>
                   ))}
                 </motion.div>
@@ -798,6 +798,13 @@ export default function Home() {
   )
 }
 
+const heroServices = [
+    "General Landscaping",
+    "Lawn Care",
+    "Pressure Washing",
+    "Seasonal Cleanups",
+]
+
 const services = [
   {
     title: "Weekly Mowing",
@@ -817,26 +824,6 @@ const services = [
       "Edge trimming included",
       "Seasonal height adjustments",
       "Post-mowing cleanup of all walkways and driveways",
-    ],
-  },
-  {
-    title: "Trimming & Edging",
-    description:
-      "Precise trimming and edging to create clean, defined borders between your lawn, walkways, and garden beds.",
-    image: "/services/trimming.jpg",
-    icon: Scissors,
-    className: "lg:row-span-2",
-    fullDescription: [
-      "Our trimming and edging service gives your property that professionally maintained look. We create crisp, clean lines along sidewalks, driveways, and garden beds that make your entire landscape look more polished.",
-      "Using professional-grade string trimmers and edgers, we can reach areas that mowers can't, ensuring your entire property looks neat and well-maintained.",
-    ],
-    features: [
-      "Crisp, defined edges along walkways and driveways",
-      "Careful trimming around obstacles and tight spaces",
-      "Clean borders between lawn and garden beds",
-      "Removal of all trimmings and debris",
-      "Attention to detail around trees, posts, and fences",
-      "Optional string trimming on slopes and hard-to-reach areas",
     ],
   },
   {
@@ -860,23 +847,23 @@ const services = [
     ],
   },
   {
-    title: "Mulching",
+    title: "Garden Maintenance",
     description:
-      "Quality mulch installation to enhance the appearance of your garden beds while helping retain moisture and prevent weeds.",
-    image: "/services/mulching.jpg",
+      "Comprehensive garden care including plant pruning, weeding, mulching, and seasonal planting to keep your gardens healthy and beautiful.",
+    image: "/services/garden.jpg",
     icon: Shovel,
     className: "lg:col-span-1 lg:row-span-1",
     fullDescription: [
-      "Our mulching service provides both aesthetic and practical benefits for your landscape. Fresh mulch gives your garden beds a clean, finished look while helping to retain soil moisture, suppress weeds, and regulate soil temperature.",
-      "We offer various types of mulch to complement your landscape design, including hardwood, cedar, pine, and colored options. Our team ensures proper application depth and keeps mulch away from tree trunks to prevent rot.",
+      "Our garden maintenance service provides comprehensive care for your flower beds, shrubs, and garden areas. We focus on plant health, aesthetic appeal, and seasonal care to ensure your gardens thrive year-round.",
+      "From regular weeding and deadheading to seasonal planting and soil preparation, our team has the expertise to maintain your garden's beauty and health throughout all seasons.",
     ],
     features: [
-      "Multiple mulch types and colors available",
-      "Proper application depth (2-3 inches)",
-      "Weed removal before application",
-      "Edging of beds for a clean finish",
-      "Careful application around plants and trees",
-      "Environmentally friendly options available",
+      "Regular weeding and plant care",
+      "Seasonal planting and transplanting",
+      "Mulch installation and refresh",
+      "Pruning of shrubs and perennials",
+      "Soil preparation and amendment",
+      "Plant health monitoring and advice",
     ],
   },
   {
@@ -936,6 +923,101 @@ const services = [
       "No hidden fees - upfront pricing",
       "Heavy lifting and labor included",
       "Property left clean after removal",
+    ],
+  },
+  {
+    title: "Seasonal Cleanups",
+    description: "Comprehensive spring and fall cleanup services to prepare your property for the changing seasons.",
+    image: "/services/cleanup.jpg",
+    icon: Scissors,
+    className: "lg:col-span-2 lg:row-span-1",
+    fullDescription: [
+      "Our seasonal cleanup services help transition your property between seasons with thorough maintenance tasks. Spring cleanups prepare your landscape for the growing season, while fall cleanups protect your property through winter.",
+      "Each seasonal cleanup is customized to your property's specific needs and includes debris removal, plant care, and preparation tasks to ensure your landscape stays healthy year-round.",
+    ],
+    features: [
+      "Leaf removal and debris clearing",
+      "Pruning of dormant plants and shrubs",
+      "Garden bed preparation and cleanup",
+      "Gutter and drainage clearing",
+      "Lawn preparation for seasonal changes",
+      "Property inspection and maintenance recommendations",
+    ],
+  },
+  {
+    title: "Sod Installation",
+    description: "Professional sod installation service to create an instant, lush green lawn for your property.",
+    image: "/services/sod.jpg",
+    icon: Tractor,
+    className: "lg:col-span-1 lg:row-span-1",
+    fullDescription: [
+      "Our sod installation service provides you with an instant, beautiful lawn. We handle everything from soil preparation to sod selection and installation, ensuring your new lawn has the best foundation for long-term success.",
+      "We work with premium sod suppliers to provide healthy, disease-free grass that's well-suited to our local climate. Our installation process includes proper soil preparation, grading, and post-installation care instructions.",
+    ],
+    features: [
+      "Professional soil preparation and grading",
+      "Premium quality sod selection",
+      "Expert installation techniques",
+      "Immediate watering and care",
+      "Post-installation maintenance guidance",
+      "Guaranteed sod quality and establishment",
+    ],
+  },
+  {
+    title: "Lawn Rolling",
+    description: "Professional lawn rolling service to smooth out uneven areas and improve the overall appearance of your lawn.",
+    image: "/services/rolling.jpg",
+    icon: Tractor,
+    className: "lg:col-span-1 lg:row-span-1",
+    fullDescription: [
+      "Our lawn rolling service helps create a smooth, even lawn surface while improving seed-to-soil contact after overseeding. This service is particularly beneficial in spring after winter frost heaving or for newly seeded areas.",
+      "We use professional-grade lawn rollers with the appropriate weight for your lawn conditions, ensuring effective results without soil compaction damage.",
+    ],
+    features: [
+      "Smooths out minor lawn imperfections",
+      "Improves seed germination rates",
+      "Enhances overall lawn appearance",
+      "Spring frost heave correction",
+      "Professional equipment for optimal results",
+      "Timing coordinated with weather conditions",
+    ],
+  },
+  {
+    title: "Aerating",
+    description: "Core aeration service to improve soil compaction, enhance root growth, and promote healthier grass.",
+    image: "/services/aerating.jpg",
+    icon: Shovel,
+    className: "lg:col-span-1 lg:row-span-1",
+    fullDescription: [
+      "Our core aeration service relieves soil compaction by removing small plugs of soil, allowing air, water, and nutrients to penetrate deeper into the root zone. This promotes stronger, healthier grass growth.",
+      "Aeration is particularly beneficial for high-traffic lawns, clay soils, or lawns that haven't been aerated in several years. We recommend combining aeration with overseeding for maximum lawn improvement.",
+    ],
+    features: [
+      "Core aeration with professional equipment",
+      "Improved water and nutrient absorption",
+      "Enhanced root development",
+      "Reduced soil compaction",
+      "Better air circulation to roots",
+      "Preparation for overseeding success",
+    ],
+  },
+  {
+    title: "Dethatching",
+    description: "Power rake service to remove thatch buildup and promote healthy grass growth and better water penetration.",
+    image: "/services/dethatching.jpg",
+    icon: Wind,
+    className: "lg:col-span-1 lg:row-span-1",
+    fullDescription: [
+      "Our dethatching service removes the layer of dead grass, roots, and debris that can build up between the soil and living grass. Excessive thatch prevents water, air, and nutrients from reaching the grass roots.",
+      "Using professional power raking equipment, we carefully remove thatch buildup while protecting healthy grass. This service is typically performed in early spring or fall for optimal results.",
+    ],
+    features: [
+      "Professional power raking equipment",
+      "Removal of excessive thatch layer",
+      "Improved water and nutrient penetration",
+      "Enhanced grass root health",
+      "Complete debris removal and cleanup",
+      "Optimal timing for lawn recovery",
     ],
   },
 ]
