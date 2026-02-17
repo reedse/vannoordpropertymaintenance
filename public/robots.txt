@@ -3,4 +3,4 @@ User-agent: *
 Allow: /
 
 # Sitemap location
-Sitemap: https://vannoordpropertymaintenance.com/sitemap.xml 
+Sitemap: https://vannoordlandscaping.com/sitemap.xml

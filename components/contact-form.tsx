@@ -1,13 +1,27 @@
 "use client"
 
-import React, { useState } from "react"
 import { Button } from "@/components/ui/button"
+import React, { useState } from "react"
+
+const SERVICE_OPTIONS = [
+  "Hardscaping",
+  "Weekly Mowing",
+  "Tree Pruning",
+  "Garden Maintenance",
+  "Gutter Cleaning",
+  "Seasonal Cleanups",
+  "Sod Installation",
+  "Lawn Rolling",
+  "Aerating",
+  "Dethatching",
+  "Other",
+] as const
 
 interface FormData {
   name: string
   email: string
   phone: string
-  service: string
+  services: string[]
   message: string
 }
 
@@ -16,7 +30,7 @@ export function ContactForm() {
     name: "",
     email: "",
     phone: "",
-    service: "",
+    services: [],
     message: "",
   })
   const [isSubmitting, setIsSubmitting] = useState(false)
@@ -26,10 +40,20 @@ export function ContactForm() {
   } | null>(null)
 
   const handleChange = (
-    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
   ) => {
     const { id, value } = e.target
     setFormData((prev) => ({ ...prev, [id]: value }))
+  }
+
+  const handleServiceChange = (option: string) => {
+    setFormData((prev) => {
+      const isSelected = prev.services.includes(option)
+      const nextServices = isSelected
+        ? prev.services.filter((s) => s !== option)
+        : [...prev.services, option]
+      return { ...prev, services: nextServices }
+    })
   }
 
   const handleSubmit = async (e: React.FormEvent) => {
@@ -58,7 +82,7 @@ export function ContactForm() {
           name: "",
           email: "",
           phone: "",
-          service: "",
+          services: [],
           message: "",
         })
       } else {
@@ -81,9 +105,8 @@ export function ContactForm() {
     <form className="space-y-4" onSubmit={handleSubmit}>
       {submitStatus && (
         <div
-          className={`p-4 rounded-md ${
-            submitStatus.success ? "bg-green-100 text-green-800" : "bg-red-100 text-red-800"
-          }`}
+          className={`p-4 rounded-md ${submitStatus.success ? "bg-green-100 text-green-800" : "bg-red-100 text-red-800"
+            }`}
         >
           {submitStatus.message}
         </div>
@@ -131,26 +154,26 @@ export function ContactForm() {
           className="w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
         />
       </div>
-      <div className="space-y-2">
-        <label htmlFor="service" className="text-sm font-medium">
-          Service Interested In
-        </label>
-        <select
-          id="service"
-          value={formData.service}
-          onChange={handleChange}
-          className="w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
-        >
-          <option value="">Select a service</option>
-          <option value="mowing">Weekly Mowing</option>
-          <option value="trimming">Trimming & Edging</option>
-          <option value="pruning">Tree Pruning</option>
-          <option value="mulching">Mulching</option>
-          <option value="junk-removal">Junk Removal</option>
-          <option value="window-gutter">Window & Gutter Cleaning</option>
-          <option value="pressure-washing">Pressure Washing</option>
-          <option value="other">Other</option>
-        </select>
+      <div className="space-y-3">
+        <p className="text-sm font-medium">
+          Services interested in (select any)
+        </p>
+        <div className="grid gap-2 sm:grid-cols-2">
+          {SERVICE_OPTIONS.map((option) => (
+            <label
+              key={option}
+              className="flex cursor-pointer items-center gap-2 rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background has-[:focus-visible]:ring-2 has-[:focus-visible]:ring-ring"
+            >
+              <input
+                type="checkbox"
+                checked={formData.services.includes(option)}
+                onChange={() => handleServiceChange(option)}
+                className="h-4 w-4 rounded border-input"
+              />
+              <span>{option}</span>
+            </label>
+          ))}
+        </div>
       </div>
       <div className="space-y-2">
         <label htmlFor="message" className="text-sm font-medium">
@@ -166,8 +189,8 @@ export function ContactForm() {
           className="w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
         ></textarea>
       </div>
-      <Button 
-        type="submit" 
+      <Button
+        type="submit"
         className="w-full bg-primary hover:bg-primary/90 text-primary-foreground"
         disabled={isSubmitting}
       >
@@ -175,4 +198,4 @@ export function ContactForm() {
       </Button>
     </form>
   )
-} 
+}

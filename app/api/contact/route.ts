@@ -9,7 +9,7 @@ export async function POST(request: Request) {
   try {
     // Parse the request body
     const body = await request.json()
-    const { name, email, phone, service, message } = body
+    const { name, email, phone, services, service, message } = body
 
     // Validate required fields
     if (!name || !email || !message) {
@@ -19,19 +19,23 @@ export async function POST(request: Request) {
       )
     }
 
-    // Format service selection
-    const formattedService = service ? service.replace(/-/g, ' ').replace(/\b\w/g, (l: string) => l.toUpperCase()) : "Not specified"
+    // Build service string: prefer services array (comma-separated), fallback to legacy service string
+    const serviceString = Array.isArray(services) && services.length > 0
+      ? services.join(", ")
+      : typeof service === "string" && service.trim()
+        ? service.replace(/-/g, " ").replace(/\b\w/g, (l: string) => l.toUpperCase())
+        : "Not specified"
 
     // Send email using Resend
     const { data, error } = await resend.emails.send({
-      from: `Contact Form <info@vannoordpropertymaintenance.com>`,
+      from: `Contact Form <info@vannoordlandscaping.com>`,
       to: [toEmail],
       subject: `New Contact Form Submission from ${name}`,
       react: EmailTemplate({
         name,
         email,
         phone: phone || "Not provided",
-        service: formattedService,
+        service: serviceString,
         message
       }),
       replyTo: email,
