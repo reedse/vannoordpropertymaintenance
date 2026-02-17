@@ -1,4 +1,4 @@
-# SEO Optimization for Vannoord Property Maintenance
+# SEO Optimization for Vannoord Landscaping
 
 ## OpenGraph Image
 For optimal sharing on social media, please create an OpenGraph image with the following specifications:
@@ -6,7 +6,7 @@ For optimal sharing on social media, please create an OpenGraph image with the f
 - File: `/public/og-image.jpg`
 - Size: 1200 x 630 pixels
 - Format: JPG (can also use PNG, but JPG is recommended for photos)
-- Content: Include the company logo, a high-quality background image of your property maintenance services, and possibly a tagline
+- Content: Include the company logo, a high-quality background image of your landscaping services, and possibly a tagline
 
 This image will be displayed when links to your website are shared on social media platforms like Facebook, Twitter, and LinkedIn.
 
@@ -50,7 +50,7 @@ This image will be displayed when links to your website are shared on social med
 
 4. **Content Updates:**
    - Add more location-specific content
-   - Create blog posts about property maintenance topics
+   - Create blog posts about landscaping topics
    - Ensure all images have descriptive alt text
 
 5. **Performance:**

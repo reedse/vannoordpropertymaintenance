@@ -1,7 +1,7 @@
 {
-  "name": "Vannoord Property Maintenance",
-  "short_name": "Vannoord PM",
-  "description": "Professional property maintenance services in Aylmer, Ontario",
+  "name": "Vannoord Landscaping",
+  "short_name": "Vannoord Landscaping",
+  "description": "Professional landscaping services in Aylmer, Ontario",
   "start_url": "/",
   "display": "standalone",
   "theme_color": "#059669",

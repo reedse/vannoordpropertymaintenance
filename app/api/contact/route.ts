@@ -1,9 +1,9 @@
+import { EmailTemplate } from "@/components/email-template"
 import { NextResponse } from "next/server"
 import { Resend } from "resend"
-import { EmailTemplate } from "@/components/email-template"
 
 const resend = new Resend(process.env.RESEND_API_KEY)
-const toEmail = process.env.RESEND_EMAIL || "vannoordpm@gmail.com"
+const toEmail = process.env.RESEND_EMAIL || "josh@vannoordlandscape.com"
 
 export async function POST(request: Request) {
   try {
@@ -27,12 +27,12 @@ export async function POST(request: Request) {
       from: `Contact Form <info@vannoordpropertymaintenance.com>`,
       to: [toEmail],
       subject: `New Contact Form Submission from ${name}`,
-      react: EmailTemplate({ 
-        name, 
-        email, 
-        phone: phone || "Not provided", 
-        service: formattedService, 
-        message 
+      react: EmailTemplate({
+        name,
+        email,
+        phone: phone || "Not provided",
+        service: formattedService,
+        message
       }),
       replyTo: email,
     })
@@ -53,4 +53,4 @@ export async function POST(request: Request) {
       { status: 500 }
     )
   }
-} 
+}

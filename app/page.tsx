@@ -1,46 +1,41 @@
 "use client"
 
-import Link from "next/link"
-import Image from "next/image"
-import { 
-  PhoneCall, 
-  Mail, 
-  MapPin, 
-  Clock, 
-  ChevronRight, 
-  Check, 
-  Facebook, 
-  Instagram, 
-  Menu, 
-  X,
-  Scissors,
-  TreePine as Tree,
-  Trash2,
-  Droplets,
-  SprayCanIcon as Spray,
-  Wind,
-  Tractor,
-  Shovel
-} from "lucide-react"
-import { useState, useEffect } from "react"
-import { motion } from "framer-motion"
 import { cn } from "@/lib/utils"
+import { motion } from "framer-motion"
+import {
+  Check,
+  Clock,
+  Facebook,
+  Instagram,
+  Layers,
+  Mail,
+  Menu,
+  PhoneCall,
+  Scissors,
+  Shovel,
+  Tractor,
+  TreePine as Tree,
+  Wind,
+  X
+} from "lucide-react"
+import Link from "next/link"
+import { useEffect, useState } from "react"
 
-import { Button } from "@/components/ui/button"
-import { ImagesSlider } from "@/components/images-slider"
 import { BentoCard, BentoGrid } from "@/components/bento-grid"
+import { ContactForm } from "@/components/contact-form"
+import { ImagesSlider } from "@/components/images-slider"
 import {
   MorphingDialog,
-  MorphingDialogTrigger,
+  MorphingDialogClose,
   MorphingDialogContainer,
   MorphingDialogContent,
-  MorphingDialogClose,
-  MorphingDialogTitle,
-  MorphingDialogSubtitle,
   MorphingDialogDescription,
   MorphingDialogImage,
+  MorphingDialogSubtitle,
+  MorphingDialogTitle,
+  MorphingDialogTrigger,
 } from "@/components/morphing-dialog"
-import { ContactForm } from "@/components/contact-form"
+import { Button } from "@/components/ui/button"
 
 export default function Home() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
@@ -81,23 +76,21 @@ export default function Home() {
   return (
     <div className="flex min-h-screen flex-col">
       <header className={`sticky top-0 z-40 w-full border-b transition-all duration-200 ${scrolled ? "bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 shadow-sm" : "bg-background"}`}>
-        <div className="container flex h-28 items-center justify-between">
+        <div className="container flex h-32 items-center justify-between">
           {/* Logo Container */}
           <div className="flex items-center">
-            <Link href="/" className="flex items-center">
-              <div className="relative h-20 w-[140px] sm:w-[140px] md:w-[140px] px-2 py-1">
-                <picture>
-                  <source srcSet="/logo.webp" type="image/webp" />
-                  <img
-                    src="/logo.PNG"
-                    alt="Vannoord Property Maintenance Logo"
-                    className="object-stretch h-full w-full"
-                  />
-                </picture>
-              </div>
+            <Link href="/" className="block size-28 sm:size-28 md:size-28 shrink-0">
+              <picture className="block size-full">
+                <source srcSet="/logo.webp" type="image/webp" />
+                <img
+                  src="/logo.PNG"
+                  alt="Vannoord Landscaping Logo"
+                  className="size-full object-contain"
+                />
+              </picture>
             </Link>
           </div>
-          
+
           {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center gap-6 lg:gap-8">
             <Link href="#" className="text-sm font-medium transition-colors hover:text-primary">
@@ -116,7 +109,7 @@ export default function Home() {
               Contact
             </Link>
           </nav>
-          
+
           {/* Contact & Social Links */}
           <div className="flex items-center gap-4">
             <div className="hidden lg:flex items-center gap-4">
@@ -143,7 +136,7 @@ export default function Home() {
                 <span className="text-sm font-medium">(226) 980-8113</span>
               </div>
             </div>
-            
+
             {/* CTA Button & Mobile Menu Toggle */}
             <div className="flex items-center gap-3">
               <Button className="bg-primary hover:bg-primary/90 text-primary-foreground">
@@ -151,9 +144,9 @@ export default function Home() {
                   Get a Quote
                 </Link>
               </Button>
-              <Button 
-                variant="ghost" 
-                size="icon" 
+              <Button
+                variant="ghost"
+                size="icon"
                 className="md:hidden flex items-center justify-center"
                 onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
                 aria-label="Toggle menu"
@@ -163,49 +156,49 @@ export default function Home() {
             </div>
           </div>
         </div>
-        
+
         {/* Mobile Menu */}
         {mobileMenuOpen && (
           <div className="md:hidden">
             <div className="container py-4 space-y-4 bg-background border-t">
               <nav className="flex flex-col space-y-3">
-                <Link 
-                  href="#" 
+                <Link
+                  href="#"
                   className="text-sm font-medium hover:text-primary py-2 px-3 rounded-md hover:bg-muted transition-colors"
                   onClick={() => setMobileMenuOpen(false)}
                 >
                   Home
                 </Link>
-                <Link 
-                  href="#services" 
+                <Link
+                  href="#services"
                   className="text-sm font-medium hover:text-primary py-2 px-3 rounded-md hover:bg-muted transition-colors"
                   onClick={() => setMobileMenuOpen(false)}
                 >
                   Services
                 </Link>
-                <Link 
-                  href="#before-after" 
+                <Link
+                  href="#before-after"
                   className="text-sm font-medium hover:text-primary py-2 px-3 rounded-md hover:bg-muted transition-colors"
                   onClick={() => setMobileMenuOpen(false)}
                 >
                   Before & After
                 </Link>
-                <Link 
-                  href="#about" 
+                <Link
+                  href="#about"
                   className="text-sm font-medium hover:text-primary py-2 px-3 rounded-md hover:bg-muted transition-colors"
                   onClick={() => setMobileMenuOpen(false)}
                 >
                   About
                 </Link>
-                <Link 
-                  href="#testimonials" 
+                <Link
+                  href="#testimonials"
                   className="text-sm font-medium hover:text-primary py-2 px-3 rounded-md hover:bg-muted transition-colors"
                   onClick={() => setMobileMenuOpen(false)}
                 >
                   Testimonials
                 </Link>
-                <Link 
-                  href="#contact" 
+                <Link
+                  href="#contact"
                   className="text-sm font-medium hover:text-primary py-2 px-3 rounded-md hover:bg-muted transition-colors"
                   onClick={() => setMobileMenuOpen(false)}
                 >
@@ -243,11 +236,11 @@ export default function Home() {
       <main className="flex-1">
         {/* Hero Section */}
         <section className="relative">
-          <ImagesSlider 
-            className="h-[85vh]" 
-            images={heroImages} 
+          <ImagesSlider
+            className="h-[85vh]"
+            images={heroImages}
             fallbackImages={heroImagesFallback}
-            autoplay={true} 
+            autoplay={true}
             direction="down"
             overlay={true}
             overlayClassName="bg-black/70"
@@ -268,23 +261,23 @@ export default function Home() {
               className="z-50 container relative flex flex-col items-center text-center justify-center py-24 md:py-32"
             >
               <div className="max-w-2xl space-y-4">
-                <motion.h1 
+                <motion.h1
                   className="text-4xl font-bold tracking-tighter text-white sm:text-5xl md:text-6xl"
                   initial={{ opacity: 0, y: -10 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: 0.2, duration: 0.8 }}
                 >
-                  Complete Property Maintenance Services
+                  Complete Landscaping Services
                 </motion.h1>
-                <motion.p 
+                <motion.p
                   className="text-xl text-white/90 md:text-2xl"
                   initial={{ opacity: 0, y: -10 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: 0.4, duration: 0.8 }}
                 >
-                  From weekly mowing to pressure washing, we keep your property looking its best year-round.
+                  From weekly mowing to hardscaping (building retaining walls, interlocking patios and walkways), we keep your property looking its best year-round.
                 </motion.p>
-                <motion.div 
+                <motion.div
                   className="hidden sm:flex flex-wrap gap-3 mt-6 justify-center"
                   initial={{ opacity: 0, y: -10 }}
                   animate={{ opacity: 1, y: 0 }}
@@ -296,7 +289,7 @@ export default function Home() {
                     </span>
                   ))}
                 </motion.div>
-                <motion.div 
+                <motion.div
                   className="flex flex-col sm:flex-row gap-3 pt-4 justify-center"
                   initial={{ opacity: 0, y: -10 }}
                   animate={{ opacity: 1, y: 0 }}
@@ -324,10 +317,10 @@ export default function Home() {
             <div className="mb-12 text-center">
               <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">Our Services</h2>
               <p className="mx-auto mt-4 max-w-[700px] text-muted-foreground md:text-xl">
-                Comprehensive property maintenance services for Aylmer homes and businesses.
+                Comprehensive landscaping services for Aylmer homes and businesses.
               </p>
             </div>
-            
+
             <BentoGrid className="lg:grid-rows-3">
               {services.map((service, index) => (
                 <MorphingDialog
@@ -351,9 +344,9 @@ export default function Home() {
                       background={
                         <div className="absolute inset-0 z-0">
                           <picture>
-                            <source 
-                              srcSet={service.image ? service.image.replace('.jpg', '.webp') : "/placeholder.webp"} 
-                              type="image/webp" 
+                            <source
+                              srcSet={service.image ? service.image.replace('.jpg', '.webp') : "/placeholder.webp"}
+                              type="image/webp"
                             />
                             <img
                               src={service.image || "/placeholder.svg"}
@@ -422,7 +415,7 @@ export default function Home() {
                           )}
 
                           <div className="pt-4 mt-6 border-t">
-                            <Button 
+                            <Button
                               className="bg-primary hover:bg-primary/90 text-primary-foreground"
                               onClick={() => {
                                 // Find and click the dialog close button
@@ -475,9 +468,9 @@ export default function Home() {
                       <p className="text-base font-medium text-muted-foreground">Before</p>
                       <div className="relative overflow-hidden rounded-md w-full h-[350px] sm:h-[400px] md:h-[500px] transform hover:scale-105 transition-transform duration-300 shadow-md">
                         <picture>
-                          <source 
-                            srcSet={project.before ? project.before.replace('.jpg', '.webp') : "/placeholder.webp"} 
-                            type="image/webp" 
+                          <source
+                            srcSet={project.before ? project.before.replace('.jpg', '.webp') : "/placeholder.webp"}
+                            type="image/webp"
                           />
                           <img
                             src={project.before || "/placeholder.svg"}
@@ -491,9 +484,9 @@ export default function Home() {
                       <p className="text-base font-medium text-muted-foreground">After</p>
                       <div className="relative overflow-hidden rounded-md w-full h-[350px] sm:h-[400px] md:h-[500px] transform hover:scale-105 transition-transform duration-300 shadow-md">
                         <picture>
-                          <source 
-                            srcSet={project.after ? project.after.replace('.jpg', '.webp') : "/placeholder.webp"} 
-                            type="image/webp" 
+                          <source
+                            srcSet={project.after ? project.after.replace('.jpg', '.webp') : "/placeholder.webp"}
+                            type="image/webp"
                           />
                           <img
                             src={project.after || "/placeholder.svg"}
@@ -548,7 +541,7 @@ export default function Home() {
             <div className="grid items-center gap-12 md:grid-cols-2">
               <div>
                 <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">
-                  About Vannoord Property Maintenance
+                  About Vannoord Landscaping
                 </h2>
                 <p className="mt-4 text-muted-foreground md:text-xl">
                   As a family-owned business based in Aylmer, Ontario, we've been providing exceptional property
@@ -594,7 +587,7 @@ export default function Home() {
                   Ready to Improve Your Property?
                 </h2>
                 <p className="mt-4 text-primary-foreground/90 md:text-xl">
-                  Contact us today for a free consultation and estimate. Let us handle all your property maintenance
+                  Contact us today for a free consultation and estimate. Let us handle all your landscaping
                   needs.
                 </p>
               </div>
@@ -628,7 +621,7 @@ export default function Home() {
                     <Mail className="mr-4 h-6 w-6 text-primary" />
                     <div>
                       <h3 className="font-bold">Email</h3>
-                      <p className="text-muted-foreground">vannoordpm@gmail.com</p>
+                      <p className="text-muted-foreground">josh@vannoordlandscape.com</p>
                     </div>
                   </div>
                   <div className="flex items-start">
@@ -678,7 +671,7 @@ export default function Home() {
                   <source srcSet="/logo.webp" type="image/webp" />
                   <img
                     src="/logo.PNG"
-                    alt="Vannoord Property Maintenance Logo"
+                    alt="Vannoord Landscaping Logo"
                     width={180}
                     height={60}
                     className="h-auto w-[120px] md:w-[180px] pl-0 md:pl-2"
@@ -686,7 +679,7 @@ export default function Home() {
                 </picture>
               </div>
               <p className="mt-4 text-sm text-muted-foreground">
-                Professional property maintenance services for Aylmer and surrounding communities in Ontario.
+                Professional landscaping services for Aylmer and surrounding communities in Ontario.
               </p>
               <div className="mt-4 flex space-x-4">
                 <Link
@@ -769,7 +762,7 @@ export default function Home() {
                 </li>
                 <li>
                   <Link href="#" className="text-muted-foreground hover:text-foreground">
-                    Pressure Washing
+                    Hardscaping
                   </Link>
                 </li>
               </ul>
@@ -783,13 +776,13 @@ export default function Home() {
                 </li>
                 <li className="flex items-start">
                   <Mail className="mr-2 h-4 w-4 text-muted-foreground" />
-                  <span className="text-muted-foreground">vannoordpm@gmail.com</span>
+                  <span className="text-muted-foreground">josh@vannoordlandscape.com</span>
                 </li>
               </ul>
             </div>
           </div>
           <div className="mt-8 border-t pt-8 text-center text-sm text-muted-foreground">
-            <p>© {new Date().getFullYear()} Vannoord Property Maintenance. All rights reserved.</p>
+            <p>© {new Date().getFullYear()} Vannoord Landscaping. All rights reserved.</p>
             <p className="mt-2">Proudly serving Aylmer and surrounding communities in Ontario.</p>
           </div>
         </div>
@@ -799,18 +792,38 @@ export default function Home() {
 }
 
 const heroServices = [
-    "General Landscaping",
-    "Lawn Care",
-    "Pressure Washing",
-    "Seasonal Cleanups",
+  "General Landscaping",
+  "Lawn Care",
+  "Hardscaping",
+  "Seasonal Cleanups",
 ]
 
 const services = [
   {
+    title: "Hardscaping",
+    description:
+      "Building retaining walls, interlocking patios and walkways to enhance your outdoor space.",
+    image: "/services/hardscaping.webp",
+    icon: Layers,
+    className: "lg:col-span-2 lg:row-span-1",
+    fullDescription: [
+      "Our hardscaping service adds structure and lasting value to your property with professionally built retaining walls, interlocking patios, and walkways. We work with quality materials to create durable, attractive outdoor living spaces.",
+      "From design to installation, we handle site preparation, proper drainage, and finishing details so your hardscape looks great and performs for years.",
+    ],
+    features: [
+      "Retaining walls",
+      "Interlocking patios",
+      "Walkways and pathways",
+      "Site preparation and drainage",
+      "Quality materials and installation",
+      "Custom design to fit your space",
+    ],
+  },
+  {
     title: "Weekly Mowing",
     description:
       "Regular lawn mowing service to keep your grass at the ideal height and your property looking neat and well-maintained.",
-    image: "/services/mowing.jpg",
+    image: "/services/mowing.webp",
     icon: Tractor,
     className: "lg:col-span-2 lg:row-span-1",
     fullDescription: [
@@ -830,7 +843,7 @@ const services = [
     title: "Tree Pruning",
     description:
       "Professional tree pruning to maintain tree health, improve appearance, and prevent potential hazards.",
-    image: "/services/pruning.jpg",
+    image: "/services/pruning.webp",
     icon: Tree,
     className: "lg:row-span-1",
     fullDescription: [
@@ -850,7 +863,7 @@ const services = [
     title: "Garden Maintenance",
     description:
       "Comprehensive garden care including plant pruning, weeding, mulching, and seasonal planting to keep your gardens healthy and beautiful.",
-    image: "/services/garden.jpg",
+    image: "/services/garden.webp",
     icon: Shovel,
     className: "lg:col-span-1 lg:row-span-1",
     fullDescription: [
@@ -867,30 +880,10 @@ const services = [
     ],
   },
   {
-    title: "Pressure Washing",
-    description:
-      "High-quality pressure washing services for driveways, decks, siding, and other surfaces to remove dirt, grime, and mildew.",
-    image: "/services/pwash.jpg",
-    icon: Spray,
-    className: "lg:col-span-2 lg:row-span-1",
-    fullDescription: [
-      "Our pressure washing service restores the appearance of your outdoor surfaces by removing built-up dirt, grime, mold, mildew, and stains. This not only improves curb appeal but also extends the life of your surfaces by preventing damage from contaminants.",
-      "We use professional-grade equipment with adjustable pressure settings to safely clean various surfaces, including concrete, wood, vinyl, brick, and stone. Our technicians are trained to use the appropriate pressure and techniques for each surface type.",
-    ],
-    features: [
-      "Driveway and walkway cleaning",
-      "Deck and patio restoration",
-      "House siding washing",
-      "Fence cleaning and brightening",
-      "Roof moss and algae removal",
-      "Environmentally friendly cleaning solutions",
-    ],
-  },
-  {
     title: "Gutter Cleaning",
     description:
       "Thorough cleaning of gutters to prevent water damage and maintain your home's exterior integrity.",
-    image: "/services/gutter.jpg",
+    image: "/services/gutter.webp",
     icon: Wind,
     className: "lg:col-span-1 lg:row-span-2",
     fullDescription: [
@@ -907,28 +900,9 @@ const services = [
     ],
   },
   {
-    title: "Junk Removal",
-    description: "Efficient removal of yard waste, old furniture, and other unwanted items from your property.",
-    image: "/services/removal.jpg",
-    icon: Trash2,
-    className: "lg:col-span-1 lg:row-span-1",
-    fullDescription: [
-      "Our junk removal service helps you reclaim your space by efficiently removing unwanted items from your property. Whether it's yard waste, old furniture, appliances, or general debris, we handle the heavy lifting and disposal.",
-      "We prioritize responsible disposal methods, including recycling and donation when possible, to minimize environmental impact. Our team works quickly and leaves your property clean and clear.",
-    ],
-    features: [
-      "Removal of yard waste, furniture, and appliances",
-      "Responsible disposal and recycling",
-      "Same-day service often available",
-      "No hidden fees - upfront pricing",
-      "Heavy lifting and labor included",
-      "Property left clean after removal",
-    ],
-  },
-  {
     title: "Seasonal Cleanups",
     description: "Comprehensive spring and fall cleanup services to prepare your property for the changing seasons.",
-    image: "/services/cleanup.jpg",
+    image: "/services/cleanup.webp",
     icon: Scissors,
     className: "lg:col-span-2 lg:row-span-1",
     fullDescription: [
@@ -947,7 +921,7 @@ const services = [
   {
     title: "Sod Installation",
     description: "Professional sod installation service to create an instant, lush green lawn for your property.",
-    image: "/services/sod.jpg",
+    image: "/services/sod.webp",
     icon: Tractor,
     className: "lg:col-span-1 lg:row-span-1",
     fullDescription: [
@@ -966,7 +940,7 @@ const services = [
   {
     title: "Lawn Rolling",
     description: "Professional lawn rolling service to smooth out uneven areas and improve the overall appearance of your lawn.",
-    image: "/services/rolling.jpg",
+    image: "/services/rolling.webp",
     icon: Tractor,
     className: "lg:col-span-1 lg:row-span-1",
     fullDescription: [
@@ -985,7 +959,7 @@ const services = [
   {
     title: "Aerating",
     description: "Core aeration service to improve soil compaction, enhance root growth, and promote healthier grass.",
-    image: "/services/aerating.jpg",
+    image: "/services/aerating.webp",
     icon: Shovel,
     className: "lg:col-span-1 lg:row-span-1",
     fullDescription: [
@@ -1004,7 +978,7 @@ const services = [
   {
     title: "Dethatching",
     description: "Power rake service to remove thatch buildup and promote healthy grass growth and better water penetration.",
-    image: "/services/dethatching.jpg",
+    image: "/services/dethatching.webp",
     icon: Wind,
     className: "lg:col-span-1 lg:row-span-1",
     fullDescription: [
@@ -1024,26 +998,18 @@ const services = [
 
 const beforeAfterProjects = [
   {
-    title: "Pressure Washing",
-    description:
-      "Our pressure washing service restored it to like-new condition.",
-    before: "comparisons/pwash-before.jpg",
-    after: "comparisons/pwash-after.jpg",
-    services: ["Pressure Washing"],
-  },
-  {
     title: "Overgrown Lawn Transformation",
     description:
       "We provided a complete lawn makeover with mowing, edging, and debris removal.",
     before: "comparisons/removal-before.jpg",
     after: "comparisons/removal-after.jpg",
-    services: ["Weekly Mowing", "Trimming & Edging", "Junk Removal"],
+    services: ["Weekly Mowing", "Trimming & Edging"],
   },
 ]
 
 const aboutPoints = [
   "Locally owned and operated business in Aylmer, Ontario",
-  "Experienced property maintenance professionals",
+  "Experienced landscaping professionals",
   "Eco-friendly practices and sustainable solutions",
   "Comprehensive services for residential and commercial properties",
   "Customized maintenance plans to fit your needs and budget",
@@ -1059,4 +1025,3 @@ const serviceAreas = [
   "Dorchester",
   "And More...",
 ]
-

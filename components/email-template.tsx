@@ -44,7 +44,7 @@ export const EmailTemplate: React.FC<EmailTemplateProps> = ({
       </div>
     </div>
     <div style={{ backgroundColor: '#f2f2f2', padding: '15px', textAlign: 'center', fontSize: '14px', color: '#666', borderRadius: '0 0 4px 4px' }}>
-      <p style={{ margin: '0' }}>This email was sent from the contact form on VanNoord Property Maintenance website.</p>
+      <p style={{ margin: '0' }}>This email was sent from the contact form on VanNoord Landscaping website.</p>
     </div>
   </div>
 ); 

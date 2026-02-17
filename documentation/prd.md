@@ -1,22 +1,22 @@
-# Product Requirements Document: Vannoord Property Maintenance Website
+# Product Requirements Document: Vannoord Landscaping Website
 
 ## 1. Executive Summary
 
-This document outlines the requirements for developing a professional website for Vannoord Property Maintenance, a family-owned property maintenance business based in Aylmer, Ontario. The website will serve as the company's primary online presence, showcasing their services, previous work, and facilitating customer inquiries through a contact form.
+This document outlines the requirements for developing a professional website for Vannoord Landscaping, a family-owned landscaping business based in Aylmer, Ontario. The website will serve as the company's primary online presence, showcasing their services, previous work, and facilitating customer inquiries through a contact form.
 
 ## 2. Product Overview
 
 ### 2.1 Product Vision
-Create a professional, user-friendly website that effectively communicates Vannoord Property Maintenance's services to potential customers in Aylmer and surrounding areas, ultimately generating new business leads through the contact form.
+Create a professional, user-friendly website that effectively communicates Vannoord Landscaping's services to potential customers in Aylmer and surrounding areas, ultimately generating new business leads through the contact form.
 
 ### 2.2 Target Audience
 - Homeowners in Aylmer and surrounding communities
-- Local businesses requiring property maintenance services
+- Local businesses requiring landscaping services
 - Property managers and real estate professionals
 - Seasonal residents needing regular property care
 
 ### 2.3 Business Goals
-1. Increase local brand awareness for Vannoord Property Maintenance
+1. Increase local brand awareness for Vannoord Landscaping
 2. Generate qualified leads through the contact form
 3. Showcase the company's expertise and quality of work
 4. Build trust with potential customers through testimonials and before/after examples
@@ -41,7 +41,7 @@ The website will follow a single-page design with anchor links to different sect
 ### 3.2 Detailed Section Requirements
 
 #### 3.2.1 Header/Navigation
-- **Logo**: Vannoord Property Maintenance logo 
+- **Logo**: Vannoord Landscaping logo 
 - **Navigation**: Links to all main sections of the page
 - **Contact Information**: Phone number visible in header
 - **Social Media Links**: Facebook and Instagram icons
@@ -209,7 +209,7 @@ The website will follow a single-page design with anchor links to different sect
 
 ### 5.1 Brand Elements
 - **Primary Color**: Green (#4CAF50)
-- **Logo**: "V" logo with "Vannoord Property Maintenance" text
+- **Logo**: "V" logo with "Vannoord Landscaping" text
 - **Typography**: System fonts for optimal performance
 - **Imagery**: Professional photos of properties, before/after transformations
 
@@ -234,7 +234,7 @@ The website will follow a single-page design with anchor links to different sect
 
 ## 7. SEO Requirements
 
-- Page title: "Vannoord Property Maintenance | Professional Property Services in Aylmer, ON"
+- Page title: "Vannoord Landscaping | Professional Landscaping Services in Aylmer, ON"
 - Meta description focused on services and location
 - Proper heading hierarchy (H1, H2, H3)
 - Alt text for all images

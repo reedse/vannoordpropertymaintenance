@@ -7,11 +7,11 @@ import { Analytics } from "@vercel/analytics/react"
 const inter = Inter({ subsets: ["latin"] })
 
 export const metadata: Metadata = {
-  title: "Vannoord Property Maintenance - Aylmer, Ontario",
-  description: "Professional property maintenance services including weekly mowing, garden maintenance, tree pruning, pressure washing, seasonal cleanups, sod installation, lawn aerating, dethatching, and more in Aylmer, Ontario and surrounding areas.",
-  keywords: "property maintenance, lawn care, landscaping, Aylmer, Ontario, tree pruning, pressure washing, junk removal, gutter cleaning, seasonal cleanups, sod installation, lawn aerating, dethatching, lawn rolling, garden maintenance",
-  authors: [{ name: "Vannoord Property Maintenance" }],
-  creator: "Vannoord Property Maintenance",
+  title: "Vannoord Landscaping - Aylmer, Ontario",
+  description: "Professional landscaping services including weekly mowing, garden maintenance, tree pruning, pressure washing, seasonal cleanups, sod installation, lawn aerating, dethatching, and more in Aylmer, Ontario and surrounding areas.",
+  keywords: "landscaping, lawn care, landscaping, Aylmer, Ontario, tree pruning, pressure washing, junk removal, gutter cleaning, seasonal cleanups, sod installation, lawn aerating, dethatching, lawn rolling, garden maintenance",
+  authors: [{ name: "Vannoord Landscaping" }],
+  creator: "Vannoord Landscaping",
   metadataBase: new URL("https://vannoordpropertymaintenance.com"),
   alternates: {
     canonical: "/",
@@ -20,16 +20,16 @@ export const metadata: Metadata = {
     type: "website",
     locale: "en_CA",
     url: "https://vannoordpropertymaintenance.com",
-    title: "Vannoord Property Maintenance - Aylmer, Ontario",
-    description: "Professional property maintenance services including weekly mowing, garden maintenance, tree pruning, pressure washing, seasonal cleanups, sod installation, lawn aerating, dethatching, and more in Aylmer, Ontario and surrounding areas.",
-    siteName: "Vannoord Property Maintenance",
+    title: "Vannoord Landscaping - Aylmer, Ontario",
+    description: "Professional landscaping services including weekly mowing, garden maintenance, tree pruning, pressure washing, seasonal cleanups, sod installation, lawn aerating, dethatching, and more in Aylmer, Ontario and surrounding areas.",
+    siteName: "Vannoord Landscaping",
     images: [
       {
         url: "https://vannoordpropertymaintenance.com/og-image.jpg",
         width: 1200,
         height: 630,
         type: "image/jpg",
-        alt: "Vannoord Property Maintenance",
+        alt: "Vannoord Landscaping",
       },
     ],
   },
@@ -38,12 +38,12 @@ export const metadata: Metadata = {
     'og:image:width': '1200',
     'og:image:height': '630',
     'og:image:type': 'image/jpg',
-    'og:image:alt': 'Vannoord Property Maintenance',
+    'og:image:alt': 'Vannoord Landscaping',
   },
   twitter: {
     card: "summary_large_image",
-    title: "Vannoord Property Maintenance - Aylmer, Ontario",
-    description: "Professional property maintenance services including weekly mowing, garden maintenance, tree pruning, pressure washing, seasonal cleanups, sod installation, lawn aerating, dethatching, and more in Aylmer, Ontario and surrounding areas.",
+    title: "Vannoord Landscaping - Aylmer, Ontario",
+    description: "Professional landscaping services including weekly mowing, garden maintenance, tree pruning, pressure washing, seasonal cleanups, sod installation, lawn aerating, dethatching, and more in Aylmer, Ontario and surrounding areas.",
     images: ["https://vannoordpropertymaintenance.com/og-image.jpg"],
   },
   robots: {
@@ -71,12 +71,12 @@ export default function RootLayout({
             __html: JSON.stringify({
               "@context": "https://schema.org",
               "@type": "LocalBusiness",
-              "name": "Vannoord Property Maintenance",
+              "name": "Vannoord Landscaping",
               "image": "https://vannoordpropertymaintenance.com/logo.PNG",
               "@id": "https://vannoordpropertymaintenance.com",
               "url": "https://vannoordpropertymaintenance.com",
               "telephone": "(226) 980-8113",
-              "email": "vannoordpm@gmail.com",
+              "email": "josh@vannoordlandscape.com",
               "priceRange": "$$",
               "address": {
                 "@type": "PostalAddress",
@@ -108,7 +108,7 @@ export default function RootLayout({
                 "https://www.facebook.com/share/1APxdMiKkv/?mibextid=wwXIfr",
                 "https://www.instagram.com/vannoordpropertymaintenance/"
               ],
-              "description": "Professional property maintenance services including weekly mowing, garden maintenance, tree pruning, pressure washing, seasonal cleanups, sod installation, lawn aerating, dethatching, and more in Aylmer, Ontario and surrounding areas.",
+              "description": "Professional landscaping services including weekly mowing, garden maintenance, tree pruning, pressure washing, seasonal cleanups, sod installation, lawn aerating, dethatching, and more in Aylmer, Ontario and surrounding areas.",
               "service": [
                 {
                   "@type": "Service",
