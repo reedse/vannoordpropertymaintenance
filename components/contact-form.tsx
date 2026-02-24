@@ -101,18 +101,18 @@ export function ContactForm() {
   }
 
   return (
-    <form className="space-y-4" onSubmit={handleSubmit}>
+    <form className="space-y-4 min-w-0 w-full max-w-full" onSubmit={handleSubmit}>
       {submitStatus && (
         <div
-          className={`p-4 rounded-md ${submitStatus.success ? "bg-green-100 text-green-800" : "bg-red-100 text-red-800"
+          className={`p-3 sm:p-4 rounded-md text-sm sm:text-base ${submitStatus.success ? "bg-green-100 text-green-800" : "bg-red-100 text-red-800"
             }`}
         >
           {submitStatus.message}
         </div>
       )}
 
-      <div className="grid gap-4 md:grid-cols-2">
-        <div className="space-y-2">
+      <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
+        <div className="space-y-2 min-w-0">
           <label htmlFor="name" className="text-sm font-medium">
             Name
           </label>
@@ -122,10 +122,10 @@ export function ContactForm() {
             value={formData.name}
             onChange={handleChange}
             required
-            className="w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
+            className="w-full min-w-0 max-w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring box-border"
           />
         </div>
-        <div className="space-y-2">
+        <div className="space-y-2 min-w-0">
           <label htmlFor="email" className="text-sm font-medium">
             Email
           </label>
@@ -136,11 +136,11 @@ export function ContactForm() {
             value={formData.email}
             onChange={handleChange}
             required
-            className="w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
+            className="w-full min-w-0 max-w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring box-border"
           />
         </div>
       </div>
-      <div className="space-y-2">
+      <div className="space-y-2 min-w-0">
         <label htmlFor="phone" className="text-sm font-medium">
           Phone
         </label>
@@ -150,31 +150,31 @@ export function ContactForm() {
           placeholder="Your phone number"
           value={formData.phone}
           onChange={handleChange}
-          className="w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
+          className="w-full min-w-0 max-w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring box-border"
         />
       </div>
-      <div className="space-y-3">
+      <div className="space-y-3 min-w-0">
         <p className="text-sm font-medium">
           Services interested in (select any)
         </p>
-        <div className="grid gap-2 sm:grid-cols-2">
+        <div className="grid grid-cols-1 gap-2 sm:grid-cols-2">
           {SERVICE_OPTIONS.map((option) => (
             <label
               key={option}
-              className="flex cursor-pointer items-center gap-2 rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background has-[:focus-visible]:ring-2 has-[:focus-visible]:ring-ring"
+              className="flex cursor-pointer items-center gap-2 rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background has-[:focus-visible]:ring-2 has-[:focus-visible]:ring-ring min-w-0"
             >
               <input
                 type="checkbox"
                 checked={formData.services.includes(option)}
                 onChange={() => handleServiceChange(option)}
-                className="h-4 w-4 rounded border-input"
+                className="h-4 w-4 shrink-0 rounded border-input"
               />
-              <span>{option}</span>
+              <span className="min-w-0 truncate">{option}</span>
             </label>
           ))}
         </div>
       </div>
-      <div className="space-y-2">
+      <div className="space-y-2 min-w-0">
         <label htmlFor="message" className="text-sm font-medium">
           Message
         </label>
@@ -185,12 +185,12 @@ export function ContactForm() {
           value={formData.message}
           onChange={handleChange}
           required
-          className="w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
+          className="w-full min-w-0 max-w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring box-border resize-y"
         ></textarea>
       </div>
       <Button
         type="submit"
-        className="w-full bg-primary hover:bg-primary/90 text-primary-foreground"
+        className="w-full min-w-0 bg-primary hover:bg-primary/90 text-primary-foreground"
         disabled={isSubmitting}
       >
         {isSubmitting ? "Sending..." : "Send Message"}

@@ -444,10 +444,16 @@ export default function Home() {
               ))}
             </BentoGrid>
 
+            <div className="mt-12 flex flex-col items-center justify-center gap-6 text-center md:mt-16">
+              <p className="text-muted-foreground max-w-xl text-base md:text-lg">
+                Ready for a quote? Tell us what you need and we&apos;ll get back to you.
+              </p>
+              <Button size="lg" className="bg-primary hover:bg-primary/90 text-primary-foreground min-w-[200px]">
+                <Link href="#contact">Get a Quote</Link>
+              </Button>
+            </div>
           </div>
         </section>
-
-        {/* Our Work Section */}
         <section id="our-work" className="py-16 bg-muted md:py-24">
           <div className="container">
             <div className="mb-12 text-center">
@@ -554,6 +560,15 @@ export default function Home() {
                 </div>
               </div>
             </div>
+
+            <div className="mt-12 flex flex-col items-center justify-center gap-6 text-center md:mt-16">
+              <p className="text-muted-foreground max-w-xl text-base md:text-lg">
+                Like what you see? Get in touch for a free consultation.
+              </p>
+              <Button size="lg" className="bg-primary hover:bg-primary/90 text-primary-foreground min-w-[200px]">
+                <Link href="#contact">Get a Quote</Link>
+              </Button>
+            </div>
           </div>
         </section>
         <section className="bg-primary text-primary-foreground py-16 md:py-20">
@@ -642,61 +657,61 @@ export default function Home() {
         </section>
 
         {/* Contact Section */}
-        <section id="contact" className="py-16 md:py-24">
-          <div className="container">
-            <div className="grid gap-12 md:grid-cols-2">
-              <div>
-                <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">Contact Us</h2>
-                <p className="mt-4 text-muted-foreground md:text-xl">
+        <section id="contact" className="py-12 md:py-24 overflow-hidden">
+          <div className="container px-4 sm:px-6">
+            <div className="grid grid-cols-1 gap-8 md:grid-cols-2 md:gap-12 md:items-start">
+              <div className="min-w-0">
+                <h2 className="text-2xl font-bold tracking-tighter sm:text-3xl md:text-4xl lg:text-5xl">Contact Us</h2>
+                <p className="mt-3 text-muted-foreground text-base sm:text-lg md:text-xl break-words">
                   Have questions or ready to get started? Reach out to us using any of the methods below.
                 </p>
-                <div className="mt-8 space-y-6">
-                  <div className="flex items-start">
-                    <PhoneCall className="mr-4 h-6 w-6 text-primary" />
-                    <div>
-                      <h3 className="font-bold">Phone</h3>
-                      <p className="text-muted-foreground">(226) 980-8113</p>
+                <div className="mt-6 sm:mt-8 space-y-4 sm:space-y-6">
+                  <div className="flex items-start gap-3 sm:gap-4 min-w-0">
+                    <PhoneCall className="h-5 w-5 sm:h-6 sm:w-6 text-primary shrink-0 mt-0.5" />
+                    <div className="min-w-0">
+                      <h3 className="font-bold text-sm sm:text-base">Phone</h3>
+                      <p className="text-muted-foreground text-sm sm:text-base break-all">(226) 980-8113</p>
                     </div>
                   </div>
-                  <div className="flex items-start">
-                    <Mail className="mr-4 h-6 w-6 text-primary" />
-                    <div>
-                      <h3 className="font-bold">Email</h3>
-                      <p className="text-muted-foreground">josh@vannoordlandscape.com</p>
+                  <div className="flex items-start gap-3 sm:gap-4 min-w-0">
+                    <Mail className="h-5 w-5 sm:h-6 sm:w-6 text-primary shrink-0 mt-0.5" />
+                    <div className="min-w-0">
+                      <h3 className="font-bold text-sm sm:text-base">Email</h3>
+                      <p className="text-muted-foreground text-sm sm:text-base break-all">josh@vannoordlandscape.com</p>
                     </div>
                   </div>
-                  <div className="flex items-start">
-                    <Clock className="mr-4 h-6 w-6 text-primary" />
-                    <div>
-                      <h3 className="font-bold">Hours</h3>
-                      <p className="text-muted-foreground">Monday - Saturday: 7am - 6pm</p>
-                      <p className="text-muted-foreground">Sunday: Closed</p>
+                  <div className="flex items-start gap-3 sm:gap-4 min-w-0">
+                    <Clock className="h-5 w-5 sm:h-6 sm:w-6 text-primary shrink-0 mt-0.5" />
+                    <div className="min-w-0">
+                      <h3 className="font-bold text-sm sm:text-base">Hours</h3>
+                      <p className="text-muted-foreground text-sm sm:text-base">Monday - Saturday: 7am - 6pm</p>
+                      <p className="text-muted-foreground text-sm sm:text-base">Sunday: Closed</p>
                     </div>
                   </div>
-                  <div className="flex items-start space-x-4 pt-2">
+                  <div className="flex flex-wrap gap-3 sm:gap-4 pt-2">
                     <Link
                       href="https://www.facebook.com/share/1APxdMiKkv/?mibextid=wwXIfr"
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="flex items-center text-muted-foreground hover:text-primary"
+                      className="flex items-center text-muted-foreground hover:text-primary text-sm sm:text-base min-w-0"
                     >
-                      <Facebook className="h-6 w-6 mr-2" />
-                      <span>vannoordlandscaping</span>
+                      <Facebook className="h-5 w-5 sm:h-6 sm:w-6 mr-2 shrink-0" />
+                      <span className="truncate">vannoordlandscaping</span>
                     </Link>
                     <Link
                       href="https://www.instagram.com/vannoordlandscaping/"
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="flex items-center text-muted-foreground hover:text-primary"
+                      className="flex items-center text-muted-foreground hover:text-primary text-sm sm:text-base min-w-0"
                     >
-                      <Instagram className="h-6 w-6 mr-2" />
-                      <span>vannoordlandscaping</span>
+                      <Instagram className="h-5 w-5 sm:h-6 sm:w-6 mr-2 shrink-0" />
+                      <span className="truncate">vannoordlandscaping</span>
                     </Link>
                   </div>
                 </div>
               </div>
-              <div className="rounded-lg border bg-background p-8 shadow-lg border-primary/20 bg-primary/5">
-                <h3 className="mb-4 text-xl font-bold">Send Us a Message</h3>
+              <div className="rounded-lg border border-primary/20 bg-background p-4 sm:p-6 md:p-8 shadow-lg min-w-0 w-full max-w-full overflow-hidden">
+                <h3 className="mb-4 text-lg sm:text-xl font-bold">Send Us a Message</h3>
                 <ContactForm />
               </div>
             </div>
