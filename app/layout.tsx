@@ -9,7 +9,7 @@ const inter = Inter({ subsets: ["latin"] })
 export const metadata: Metadata = {
   title: "Vannoord Landscaping - Aylmer, Ontario",
   description: "Professional landscaping services including weekly mowing, garden maintenance, tree pruning, pressure washing, seasonal cleanups, sod installation, lawn aerating, dethatching, and more in Aylmer, Ontario and surrounding areas.",
-  keywords: "landscaping, lawn care, landscaping, Aylmer, Ontario, tree pruning, pressure washing, junk removal, gutter cleaning, seasonal cleanups, sod installation, lawn aerating, dethatching, lawn rolling, garden maintenance",
+  keywords: "landscaping, lawn care, Aylmer, Ontario, tree pruning, pressure washing, junk removal, seasonal cleanups, sod installation, lawn aerating, dethatching, lawn rolling, garden maintenance",
   authors: [{ name: "Vannoord Landscaping" }],
   creator: "Vannoord Landscaping",
   metadataBase: new URL("https://vannoordlandscaping.com"),
@@ -106,7 +106,7 @@ export default function RootLayout({
               ],
               "sameAs": [
                 "https://www.facebook.com/share/1APxdMiKkv/?mibextid=wwXIfr",
-                "https://www.instagram.com/vannoordpropertymaintenance/"
+                "https://www.instagram.com/vannoordlandscaping/"
               ],
               "description": "Professional landscaping services including weekly mowing, garden maintenance, tree pruning, pressure washing, seasonal cleanups, sod installation, lawn aerating, dethatching, and more in Aylmer, Ontario and surrounding areas.",
               "service": [
@@ -129,11 +129,6 @@ export default function RootLayout({
                   "@type": "Service",
                   "name": "Pressure Washing",
                   "description": "High-quality pressure washing services for driveways, decks, siding, and other surfaces to remove dirt, grime, and mildew."
-                },
-                {
-                  "@type": "Service",
-                  "name": "Gutter Cleaning",
-                  "description": "Thorough cleaning of gutters to prevent water damage and maintain your home's exterior integrity."
                 },
                 {
                   "@type": "Service",

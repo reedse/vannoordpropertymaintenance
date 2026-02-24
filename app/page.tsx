@@ -99,8 +99,8 @@ export default function Home() {
             <Link href="#services" className="text-sm font-medium transition-colors hover:text-primary">
               Services
             </Link>
-            <Link href="#before-after" className="text-sm font-medium transition-colors hover:text-primary">
-              Before & After
+            <Link href="#our-work" className="text-sm font-medium transition-colors hover:text-primary">
+              Our Work
             </Link>
             <Link href="#about" className="text-sm font-medium transition-colors hover:text-primary">
               About
@@ -123,7 +123,7 @@ export default function Home() {
                 <Facebook className="h-5 w-5" />
               </Link>
               <Link
-                href="https://www.instagram.com/vannoordpropertymaintenance/"
+                href="https://www.instagram.com/vannoordlandscaping/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-muted-foreground transition-colors hover:text-primary"
@@ -177,11 +177,11 @@ export default function Home() {
                   Services
                 </Link>
                 <Link
-                  href="#before-after"
+                  href="#our-work"
                   className="text-sm font-medium hover:text-primary py-2 px-3 rounded-md hover:bg-muted transition-colors"
                   onClick={() => setMobileMenuOpen(false)}
                 >
-                  Before & After
+                  Our Work
                 </Link>
                 <Link
                   href="#about"
@@ -216,7 +216,7 @@ export default function Home() {
                   <span className="sr-only">Facebook</span>
                 </Link>
                 <Link
-                  href="https://www.instagram.com/vannoordpropertymaintenance/"
+                  href="https://www.instagram.com/vannoordlandscaping/"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-muted-foreground hover:text-primary"
@@ -447,13 +447,13 @@ export default function Home() {
           </div>
         </section>
 
-        {/* Before & After Section */}
-        <section id="before-after" className="py-16 bg-muted md:py-24">
+        {/* Our Work Section */}
+        <section id="our-work" className="py-16 bg-muted md:py-24">
           <div className="container">
             <div className="mb-12 text-center">
-              <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">Before & After</h2>
+              <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">Our Work</h2>
               <p className="mx-auto mt-4 max-w-[700px] text-muted-foreground md:text-xl">
-                See the difference our services make with these real transformations.
+                A glimpse at our recent projects and transformations.
               </p>
             </div>
 
@@ -511,10 +511,51 @@ export default function Home() {
                 </div>
               ))}
             </div>
+
+            <div className="mt-16 space-y-16">
+              <div>
+                <h3 className="text-2xl font-bold mb-6">Mulch installation</h3>
+                <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
+                  {["/work/front1.webp", "/work/front2.webp", "/work/front3.webp"].map((src, i) => (
+                    <div
+                      key={i}
+                      className="relative overflow-hidden rounded-md w-full h-[350px] sm:h-[400px] transform hover:scale-105 transition-transform duration-300 shadow-md bg-background"
+                    >
+                      <picture>
+                        <source srcSet={src} type="image/webp" />
+                        <img
+                          src={src}
+                          alt={`Mulch installation ${i + 1}`}
+                          className="object-cover absolute inset-0 w-full h-full"
+                        />
+                      </picture>
+                    </div>
+                  ))}
+                </div>
+              </div>
+              <div>
+                <h3 className="text-2xl font-bold mb-6">Hardscaping</h3>
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                  {["/work/walkway.webp", "/work/walkway2.webp"].map((src, i) => (
+                    <div
+                      key={i}
+                      className="relative overflow-hidden rounded-md w-full h-[350px] sm:h-[400px] transform hover:scale-105 transition-transform duration-300 shadow-md bg-background"
+                    >
+                      <picture>
+                        <source srcSet={src} type="image/webp" />
+                        <img
+                          src={src}
+                          alt={`Hardscaping ${i + 1}`}
+                          className="object-cover absolute inset-0 w-full h-full"
+                        />
+                      </picture>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
           </div>
         </section>
-
-        {/* Local Service Area */}
         <section className="bg-primary text-primary-foreground py-16 md:py-20">
           <div className="container">
             <div className="text-center mb-10">
@@ -640,16 +681,16 @@ export default function Home() {
                       className="flex items-center text-muted-foreground hover:text-primary"
                     >
                       <Facebook className="h-6 w-6 mr-2" />
-                      <span>@vannoordpm</span>
+                      <span>vannoordlandscaping</span>
                     </Link>
                     <Link
-                      href="https://www.instagram.com/vannoordpropertymaintenance/"
+                      href="https://www.instagram.com/vannoordlandscaping/"
                       target="_blank"
                       rel="noopener noreferrer"
                       className="flex items-center text-muted-foreground hover:text-primary"
                     >
                       <Instagram className="h-6 w-6 mr-2" />
-                      <span>@vannoordpm</span>
+                      <span>vannoordlandscaping</span>
                     </Link>
                   </div>
                 </div>
@@ -692,7 +733,7 @@ export default function Home() {
                   <span className="sr-only">Facebook</span>
                 </Link>
                 <Link
-                  href="https://www.instagram.com/vannoordpropertymaintenance/"
+                  href="https://www.instagram.com/vannoordlandscaping/"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-muted-foreground hover:text-primary"
@@ -716,8 +757,8 @@ export default function Home() {
                   </Link>
                 </li>
                 <li>
-                  <Link href="#before-after" className="text-muted-foreground hover:text-foreground">
-                    Before & After
+                  <Link href="#our-work" className="text-muted-foreground hover:text-foreground">
+                    Our Work
                   </Link>
                 </li>
                 <li>
@@ -753,11 +794,6 @@ export default function Home() {
                 <li>
                   <Link href="#" className="text-muted-foreground hover:text-foreground">
                     Tree Pruning
-                  </Link>
-                </li>
-                <li>
-                  <Link href="#" className="text-muted-foreground hover:text-foreground">
-                    Gutter Cleaning
                   </Link>
                 </li>
                 <li>
@@ -880,26 +916,6 @@ const services = [
     ],
   },
   {
-    title: "Gutter Cleaning",
-    description:
-      "Thorough cleaning of gutters to prevent water damage and maintain your home's exterior integrity.",
-    image: "/services/gutter.webp",
-    icon: Wind,
-    className: "lg:col-span-1 lg:row-span-2",
-    fullDescription: [
-      "Our gutter cleaning service helps prevent potential water damage to your home. Clear gutters ensure proper water drainage away from your foundation, protecting your property from water-related issues.",
-      "Our professional team uses specialized equipment to safely remove all debris from gutters and downspouts, ensuring proper water flow and preventing clogging.",
-    ],
-    features: [
-      "Complete gutter debris removal",
-      "Downspout flushing",
-      "Minor gutter repairs when needed",
-      "Inspection for potential issues",
-      "Proper disposal of all gutter debris",
-      "Protection of landscaping during service"
-    ],
-  },
-  {
     title: "Seasonal Cleanups",
     description: "Comprehensive spring and fall cleanup services to prepare your property for the changing seasons.",
     image: "/services/cleanup.webp",
@@ -913,7 +929,7 @@ const services = [
       "Leaf removal and debris clearing",
       "Pruning of dormant plants and shrubs",
       "Garden bed preparation and cleanup",
-      "Gutter and drainage clearing",
+      "Drainage clearing",
       "Lawn preparation for seasonal changes",
       "Property inspection and maintenance recommendations",
     ],
@@ -1001,9 +1017,17 @@ const beforeAfterProjects = [
     title: "Overgrown Lawn Transformation",
     description:
       "We provided a complete lawn makeover with mowing, edging, and debris removal.",
-    before: "comparisons/removal-before.jpg",
-    after: "comparisons/removal-after.jpg",
+    before: "/comparisons/removal-before.jpg",
+    after: "/comparisons/removal-after.jpg",
     services: ["Weekly Mowing", "Trimming & Edging"],
+  },
+  {
+    title: "Sod Installation",
+    description:
+      "Professional sod installation for an instant, lush green lawn. We handle soil preparation, sod selection, and installation for lasting results.",
+    before: "/comparisons/3-before.webp",
+    after: "/comparisons/3-after.webp",
+    services: ["Sod Installation", "Lawn Care"],
   },
 ]
 

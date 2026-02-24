@@ -8,7 +8,6 @@ const SERVICE_OPTIONS = [
   "Weekly Mowing",
   "Tree Pruning",
   "Garden Maintenance",
-  "Gutter Cleaning",
   "Seasonal Cleanups",
   "Sod Installation",
   "Lawn Rolling",
