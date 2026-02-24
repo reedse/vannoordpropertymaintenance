@@ -75,11 +75,11 @@ export default function Home() {
 
   return (
     <div className="flex min-h-screen flex-col">
-      <header className={`sticky top-0 z-40 w-full border-b transition-all duration-200 ${scrolled ? "bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 shadow-sm" : "bg-background"}`}>
-        <div className="container flex h-32 items-center justify-between">
+      <header className={`fixed top-0 left-0 right-0 z-40 w-full border-b transition-all duration-200 ${scrolled ? "bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 shadow-sm" : "bg-background"}`}>
+        <div className="container flex h-24 md:h-32 items-center justify-between">
           {/* Logo Container */}
           <div className="flex items-center">
-            <Link href="/" className="block size-28 sm:size-28 md:size-28 shrink-0">
+            <Link href="/" className="block size-20 shrink-0 md:size-28">
               <picture className="block size-full">
                 <source srcSet="/logo.webp" type="image/webp" />
                 <img
@@ -139,10 +139,8 @@ export default function Home() {
 
             {/* CTA Button & Mobile Menu Toggle */}
             <div className="flex items-center gap-3">
-              <Button className="bg-primary hover:bg-primary/90 text-primary-foreground">
-                <Link href="#contact">
-                  Get a Quote
-                </Link>
+              <Button asChild className="bg-primary hover:bg-primary/90 text-primary-foreground">
+                <a href="#contact">Get a Quote</a>
               </Button>
               <Button
                 variant="ghost"
@@ -191,13 +189,6 @@ export default function Home() {
                   About
                 </Link>
                 <Link
-                  href="#testimonials"
-                  className="text-sm font-medium hover:text-primary py-2 px-3 rounded-md hover:bg-muted transition-colors"
-                  onClick={() => setMobileMenuOpen(false)}
-                >
-                  Testimonials
-                </Link>
-                <Link
                   href="#contact"
                   className="text-sm font-medium hover:text-primary py-2 px-3 rounded-md hover:bg-muted transition-colors"
                   onClick={() => setMobileMenuOpen(false)}
@@ -233,7 +224,7 @@ export default function Home() {
           </div>
         )}
       </header>
-      <main className="flex-1">
+      <main className="flex-1 pt-24 md:pt-32">
         {/* Hero Section */}
         <section className="relative">
           <ImagesSlider
@@ -295,15 +286,11 @@ export default function Home() {
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: 0.8, duration: 0.8 }}
                 >
-                  <Button size="lg" className="bg-primary hover:bg-primary/90 text-primary-foreground font-medium">
-                    <Link href="#contact">
-                      Free Consultation
-                    </Link>
+                  <Button asChild size="lg" className="bg-primary hover:bg-primary/90 text-primary-foreground font-medium">
+                    <a href="#contact">Free Consultation</a>
                   </Button>
-                  <Button size="lg" variant="outline" className="bg-white/10 text-white backdrop-blur hover:bg-white/20">
-                    <Link href="#services">
-                      Our Services
-                    </Link>
+                  <Button asChild size="lg" variant="outline" className="bg-white/10 text-white backdrop-blur hover:bg-white/20">
+                    <a href="#services">Our Services</a>
                   </Button>
                 </motion.div>
               </div>
@@ -415,17 +402,8 @@ export default function Home() {
                           )}
 
                           <div className="pt-4 mt-6 border-t">
-                            <Button
-                              className="bg-primary hover:bg-primary/90 text-primary-foreground"
-                              onClick={() => {
-                                // Find and click the dialog close button
-                                const closeButton = document.querySelector(".absolute.right-4.top-4") as HTMLElement;
-                                if (closeButton) closeButton.click();
-                              }}
-                            >
-                              <Link href="#contact">
-                                Request This Service
-                              </Link>
+                            <Button asChild className="bg-primary hover:bg-primary/90 text-primary-foreground">
+                              <a href="#contact">Request This Service</a>
                             </Button>
                           </div>
                         </MorphingDialogDescription>
@@ -448,8 +426,8 @@ export default function Home() {
               <p className="text-muted-foreground max-w-xl text-base md:text-lg">
                 Ready for a quote? Tell us what you need and we&apos;ll get back to you.
               </p>
-              <Button size="lg" className="bg-primary hover:bg-primary/90 text-primary-foreground min-w-[200px]">
-                <Link href="#contact">Get a Quote</Link>
+              <Button asChild size="lg" className="bg-primary hover:bg-primary/90 text-primary-foreground min-w-[200px]">
+                <a href="#contact">Get a Quote</a>
               </Button>
             </div>
           </div>
@@ -565,8 +543,8 @@ export default function Home() {
               <p className="text-muted-foreground max-w-xl text-base md:text-lg">
                 Like what you see? Get in touch for a free consultation.
               </p>
-              <Button size="lg" className="bg-primary hover:bg-primary/90 text-primary-foreground min-w-[200px]">
-                <Link href="#contact">Get a Quote</Link>
+              <Button asChild size="lg" className="bg-primary hover:bg-primary/90 text-primary-foreground min-w-[200px]">
+                <a href="#contact">Get a Quote</a>
               </Button>
             </div>
           </div>
@@ -611,10 +589,8 @@ export default function Home() {
                     </li>
                   ))}
                 </ul>
-                <Button className="mt-8 bg-primary hover:bg-primary/90 text-primary-foreground">
-                  <Link href="#contact">
-                    Learn More About Us
-                  </Link>
+                <Button asChild className="mt-8 bg-primary hover:bg-primary/90 text-primary-foreground">
+                  <a href="#contact">Learn More About Us</a>
                 </Button>
               </div>
               <div className="relative overflow-hidden rounded-lg h-[600px] w-full">
@@ -647,17 +623,15 @@ export default function Home() {
                   needs.
                 </p>
               </div>
-              <Button size="lg" variant="secondary" className="min-w-[200px]">
-                <Link href="#contact">
-                  Get Started Today
-                </Link>
+              <Button asChild size="lg" variant="secondary" className="min-w-[200px]">
+                <a href="#contact">Get Started Today</a>
               </Button>
             </div>
           </div>
         </section>
 
         {/* Contact Section */}
-        <section id="contact" className="py-12 md:py-24 overflow-hidden">
+        <section id="contact" className="scroll-mt-24 md:scroll-mt-32 py-12 md:py-24 overflow-hidden">
           <div className="container px-4 sm:px-6">
             <div className="grid grid-cols-1 gap-8 md:grid-cols-2 md:gap-12 md:items-start">
               <div className="min-w-0">

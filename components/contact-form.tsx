@@ -157,7 +157,7 @@ export function ContactForm() {
         <p className="text-sm font-medium">
           Services interested in (select any)
         </p>
-        <div className="grid grid-cols-1 gap-2 sm:grid-cols-2">
+        <div className="grid grid-cols-2 gap-2">
           {SERVICE_OPTIONS.map((option) => (
             <label
               key={option}
@@ -169,7 +169,7 @@ export function ContactForm() {
                 onChange={() => handleServiceChange(option)}
                 className="h-4 w-4 shrink-0 rounded border-input"
               />
-              <span className="min-w-0 truncate">{option}</span>
+              <span className="min-w-0">{option}</span>
             </label>
           ))}
         </div>
